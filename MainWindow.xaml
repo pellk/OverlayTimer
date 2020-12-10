@@ -4,17 +4,20 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d" Title="Overlay Timer"
-        SizeToContent="WidthAndHeight" AllowsTransparency="True" Background="Transparent" FontSize="30" WindowStartupLocation="CenterScreen" WindowStyle="None" Topmost="True" Closing="Window_Closing" Icon="hourglass.ico" ResizeMode="NoResize">
+        SizeToContent="WidthAndHeight" AllowsTransparency="True" Background="Transparent" FontSize="30" WindowStartupLocation="CenterScreen" 
+        WindowStyle="None" Topmost="True" Closing="Window_Closing" Icon="hourglass.ico" ResizeMode="NoResize">
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="2"/>
+            <ColumnDefinition Width="Auto"/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <ProgressBar x:Name="TimeProgress" Foreground="#FFEE4C00" Background="#05000000" BorderThickness="0" Value="0" MouseMove="TimeProgress_MouseMove" MouseLeave="TimeProgress_MouseLeave" Opacity="0.5">
-            <ProgressBar.LayoutTransform>
+        <Border BorderThickness="0,1,0,0" BorderBrush="Black" Opacity="0.7">
+            <ProgressBar x:Name="TimeProgress" MouseLeave="TimeProgress_MouseLeave" Foreground="Green" Background="Black" Height="2" 
+                     BorderThickness="0" Value="0" MouseMove="TimeProgress_MouseMove"/>
+            <Border.LayoutTransform>
                 <RotateTransform Angle="90"/>
-            </ProgressBar.LayoutTransform>
-        </ProgressBar>
+            </Border.LayoutTransform>
+        </Border>
         <Border Grid.Column="1" x:Name="SetTimePanel" Background="#00000000">
             <Grid MouseLeave="Grid_MouseLeave" Background="#00000000">
                 <Grid.RowDefinitions>
@@ -31,11 +34,11 @@
                         <Grid>
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="Auto"/>
-                                <ColumnDefinition Width="80"/>
+                                <ColumnDefinition Width="Auto"/>
                                 <ColumnDefinition Width="Auto"/>
                             </Grid.ColumnDefinitions>
                             <TextBlock Text="Minutes:" Margin="2"/>
-                            <TextBox Grid.Column="1" x:Name="TimeTextBox" Text="30" TextAlignment="Center" Margin="2"/>
+                            <TextBox Grid.Column="1" x:Name="TimeTextBox" Text="30" TextAlignment="Center" Margin="2" Width="70"/>
                             <Button Grid.Column="2" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="2" Padding="10,0" VerticalContentAlignment="Center" Content="X" Click="CloseButton_Click" Background="#b00" Foreground="White"/>
                         </Grid>
                         <Grid Grid.Row="1">

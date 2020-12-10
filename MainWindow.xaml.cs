@@ -88,6 +88,7 @@ namespace OverlayTimer
             else
             {
                 mainTimer.Stop();
+                StartButton.Content = "Start";
                 Title = "Overlay Timer";
                 var player = new MediaPlayer();
                 string number = new Random().Next(1, 10).ToString("00");
@@ -116,7 +117,6 @@ namespace OverlayTimer
 
         private void TimeProgress_MouseMove(object sender, MouseEventArgs e)
         {
-            TimeProgress.Opacity = 0.8;
             if (SetTimePanel.Visibility == Visibility.Collapsed && !hoverTimer.IsEnabled)
                 hoverTimer.Start();
         }
@@ -126,7 +126,6 @@ namespace OverlayTimer
             if (!SetTimePanel.IsMouseOver)
             {
                 SetTimePanel.Visibility = Visibility.Collapsed;
-                TimeProgress.Opacity = 0.5;
             }
         }
 
