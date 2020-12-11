@@ -1,18 +1,16 @@
 ﻿using System;
-using System.Threading;
+using System.ComponentModel;
 using System.Windows;
 using System.Windows.Input;
-using System.ComponentModel;
 using System.Windows.Media;
 using System.Windows.Threading;
-using System.Media;
 
 namespace OverlayTimer
 {
     public partial class MainWindow : Window
     {
         readonly DispatcherTimer mainTimer, hoverTimer;
-        //readonly BackgroundWorker worker;
+        
         DateTime tStart, tPaused;
         readonly Color[] quarterColors = new Color[] {
             Color.FromRgb(33, 150, 243),
